@@ -1,0 +1,28 @@
+<div class="text-center">
+    <div class="m-5">
+        <p class="text-pink">Hi ! </p>
+        <p>Welcome to My World but...</p>
+        <p>It's a secret for everyone,
+        <p>must answer a question before you can enter
+            <span (click)="closeQuestion(); openQuestion = !openQuestion" *ngIf="!(message === 'Get out!!!')"> My World.</span>
+        </p>
+    </div>
+
+    <div *ngIf="openQuestion">
+        <div class="box-login p-4">
+            <h3 >What is my favorite festival ?</h3>
+            <div *ngFor="let answer of answerLogin">
+                <p (click)="sentData(answer.choice)">{{ answer.choice }}</p>
+            </div>
+            <p class="text-pink" (click)="closeQuestion()">{{openQuestion ? 'Close !' : ' '}}</p>
+        </div>
+    </div>
+    <div *ngIf="timeOut && message ==='Join my world!'">
+        <h1 class="text-pink">My World in {{ timeOut }} seconds</h1>
+      </div>    
+    <h2 class="text-blue">{{ message }}</h2>
+    <h3 class="text-pink">{{ message }}</h3>
+    <h4 class="text-blue">{{ message }}</h4>
+
+
+</div>

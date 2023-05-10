@@ -1,0 +1,25 @@
+.background-page {
+    background-color: rgba(39, 38, 38, 0.756);
+    padding: 30px;
+}
+
+.bg-border {
+    border-radius: 15px;
+    animation-name: changecolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes changecolor {
+    from {
+        border: 2px solid rgba(93, 0, 255, 0.656); 
+        box-shadow: 0 4px 8px 0 rgba(158, 104, 252, 0.656), 0 6px 20px 0 rgba(152, 100, 243, 0.656);
+        }
+    to {border: 2px solid rgba(181, 60, 242, 0.656);
+        box-shadow: 0 4px 8px 0 rgba(221, 52, 247, 0.656), 0 6px 20px 0 rgba(236, 59, 242, 0.656);
+        }
+  }
+
+  .input-question {
+    margin-bottom: 20px;
+  }

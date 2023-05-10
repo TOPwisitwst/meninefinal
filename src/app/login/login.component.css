@@ -1,0 +1,18 @@
+.box-login {
+    background-color: rgb(6, 22, 37);
+    border: solid 2px #cc8eff ;
+}
+
+.box-login p {
+    color: #7ce4fc;
+}
+
+.box-login p:hover {
+    color: #cc8eff;
+}
+
+.box-login h3 {
+    color: #cc8eff;
+}
+
+

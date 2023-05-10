@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Bai Jamjuree', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080f1b;
+    color: azure;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubbles span:nth-child(even){
+    background: #8f07ff;
+    box-shadow: 0 0 0 10px #8f07ff44,
+    0 0 50px #8f07ff,
+    0 0 100px #8f07ff;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 15px;
+  }
+  
+
+  .navbar-brand, .offcanvas-title {
+    color: #cc8eff;
+  }
+
+  .navbar-brand:hover {
+    color: #7ce4fc
+  }
+
+  .text-pink {
+    color: #cc8eff !important;
+    font-weight: bold;
+}
+
+.text-blue {
+    color: #7ce4fc !important;
+    font-weight: bold;
+}
+
+
