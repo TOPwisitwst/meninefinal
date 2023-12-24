@@ -1,32 +1,627 @@
 <div class="text-center background-page bg-border">
-    <h1>Welcome !</h1>
-    <div>
-        <p>what is you name ?</p>
-        <input type="text" class="input-question" placeholder="input you name" [(ngModel)]="value">
-        <p *ngIf="value"> Hello ! {{value}} thanks for get to my wold , i have somethink tell you </p>
-
-
-<!-- 
-        <form (ngSubmit)="addData()">
-            <input type="text" [(ngModel)]="newData.name" name="name">
-            <input type="text" [(ngModel)]="newData.firstname" name="firstname">
-            <button type="submit">Add Data</button>
-          </form> -->
-
-          <!-- <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
-            <div class="row">
-                <div class="col-12 m-2">
-                    <label for="name" class="mx-3">Name:</label> 
-                    <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
-                </div>
-                <div class="col-12 m-2">
-                    <label for="email" class="mx-3">Email: </label>
-                    <input type="email" id="email" name="email" [(ngModel)]="formData.email" required>
-                </div>
-                <div class="col-12 m-2">
-                    <button style="color: #ffffff; padding: 5px;" type="submit" [disabled]="!myForm.valid">Submit</button>
-                </div>
-        </div>
-          </form> -->
-
+  <div class="welcome"[ngClass]="{ 'hidden': !welcome }">
+    <h1 class="text-pink mb-4">Welcome !</h1>
+  <div>
+    <p>what is you name ?</p>
+    <input type="text" class="input-question" placeholder="input you name" [(ngModel)]="name"> <br>
+    <button type="button" class="btn btn-secondary mx-2 mb-4 " [ngStyle]="{'background-color': name ? '#8d13f1' : ''}"
+      (click)="openMessage()">Submit</button>
+  </div>
 </div>
+
+
+  <!-- 
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+
+  <div class="show-message" [ngClass]="{ 'hidden': !showMessage }">
+    <div *ngIf="name" class="mb-4">
+      <h1 class="text-pink mb-4">Hi <span class="text-purple">{{name}}</span> my sunshine !</h1>
+      thanks for get to my world , I have something to say. 
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <h5 class="text-purple">Start Date</h5>
+        <p>Thursday, Decembe 24, 2023</p>
+      </div>
+      <div class="col-4">
+        <h5 class="text-purple">Present</h5>
+        <p>Together for {{formattedDateDiff }}</p>
+      </div>
+      <div class="col-4">
+        <h5 class="text-purple">Today</h5>
+        <p>{{currentDate | date:'fullDate'}}</p>
+      </div>
+    </div>
+
+
+    <!-- <p class="mt-5">Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.</p> -->
+
+
+    <div class="container ">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="card mt-3 card-center" style="width: 18rem;">
+            <img
+              src="./assets/images/picture_1.jpg" class="card-img-top" alt="...">
+            <div class="card-body ">
+              <p class="card-text">You're the best thing that ever happend to me.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card mt-3 card-center" style="width: 18rem;">
+            <img
+            src="./assets/images/picture_3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Thank you for always being my rainbow after the storm.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card mt-3 card-center" style="width: 18rem;">
+            <img
+            src="./assets/images/picture_4.jpg" class="card-img-top" alt="...">
+
+            <div class="card-body">
+              <p class="card-text">Everthing i've never done, i want to do with you.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-7">
+          <div id="frame1">
+            <div id="border1">
+                <video src="./assets/images/clip_1.mp4" autoplay loop class="picture-border" alt="Drawing"></video>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-md-4">
+          <div id="frame2">
+            <div id="border2">
+              <div>
+                <img
+                src="./assets/images/picture_5.jpg"
+                  class="picture-border2" height="350" width="250" alt="" />
+              </div>
+              <div class="text-picture">Christmas Day</div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <h1>Question :)</h1>
+      <h3>must answer all questions correctly</h3>
+      <div class="question">
+        <form (ngSubmit)="submitForm()">
+          
+          <div class="question answer">
+            <p>เราเริ่มคุยกันครั้งแรกที่ไหน</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer2" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    Southern Thai Bird's Nest
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer2" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    The Beantles House
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer2" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    Central Festival 
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer2" id="answer4" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer4">
+                    ห้องสมุด Music house 
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>ใครทำให้เราได้รู้จักกัน</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer4" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    หมื่น
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer4" id="answer2"(change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer2">
+                    หมง
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer4" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    ไบร์ท
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer4" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    ช็อปเปอร์
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>ทริปแรกของเราคือที่ไหน</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    ตรัง
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="answer2" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer2">
+                    กระบี่
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    ภูเก็ต
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    กรุงเทพ
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="question answer">
+            <p>เราเคยไปเที่ยวที่ไหนด้วยกันบ้าง</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer3" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    ขอนแก่น , ภูเก็ต
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer3" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    กระบี่ , เกาะล้าน
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer3" id="answer3" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer3">
+                    กระบี่ , ตรัง
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer3" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    เกาะเสม็ด , น่าน
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="question answer">
+            <p>เธอให้อะไรกับเค้าเป็นนของชิ้นแรก</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer5" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    กางเกง
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer5" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    case airpod 
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer5" id="answer3" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer3">
+                    กระเป๋า
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer5" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    เสื้อ
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>เราชอบดูการ์ตูนอะไรด้วยกัน</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer6" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    Scoopy Doo
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer6" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    แม่มดน้อยโดเรมี
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer6" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    โคนัน
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer6" id="answer4" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer4">
+                    ชินจัง
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>สิ่งที่เราชอบกินหมือน ๆ กัน คืออะไร</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer7" id="answer1"
+                    (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer1">
+                    เฟรนช์ฟรายส์
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer7" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    ไก่ทอด
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer7" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    ซูชิ
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer7" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    ชาบู
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>ห้างสรรพสินค้าที่เราชอบไปกันบ่อย ๆ คือที่ไหน</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer8" id="answer1"
+                    (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer1">
+                    Central ลาดพร้าว
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer8" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    MBK
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer8" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    Central พระราม 9 
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer8" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    Esplanade
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>เราไปเที่ยวด้วยกันทั้งหมดกี่ที่</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer9" id="answer1 ">
+                  <label class="form-check-label" for="answer1">
+                    5 ที่
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer9" id="answer2" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer2">
+                    6 ที่
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer9" id="answer3">
+                  <label class="form-check-label" for="answer3">
+                    7 ที่
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer9" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    8 ที่
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question answer">
+            <p>เราคบกันมากี่ปี</p>
+            <div class="row">
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer10" id="answer1">
+                  <label class="form-check-label" for="answer1">
+                    1 ปี
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer10" id="answer2">
+                  <label class="form-check-label" for="answer2">
+                    2 ปี
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer10" id="answer3" (change)="onAnswerSelected(1)">
+                  <label class="form-check-label" for="answer3">
+                    3 ปี
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="answer10" id="answer4">
+                  <label class="form-check-label" for="answer4">
+                    4 ปี
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="btn btn-secondary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</p>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">มั่นใจป่าว?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ต้องตอบถูกมากกว่า 8 ข้อนะคะ
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" type="submit" data-bs-dismiss="modal">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <div *ngIf="keeppoint>0" >
+        <h2>คะแนนที่ได้รับ {{points}} คะแนน</h2>
+      </div>
+      <p class="text-pink mt-3">
+        {{textchange}}
+      </p>
+      
+      <div *ngIf="points>7" >
+      <div class="gallery">
+        <h1 class="text-pink"> Gallery Our Memories !</h1>
+
+        <div id="carouselExampleFade" class="carousel slide carousel-fade mt-5 mx-5 px-5">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/images/picture_6.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/picture_7.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/picture_8.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+       
+          <button type="button" class="btn btn-secondary mx-2 mb-4 mt-3" routerLink="/main" >
+            Click เพื่อไปต่อ :)
+            </button>
+        </div>
+
+      
+
+       </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <div *ngIf="showMusic" class="music">
+  <div class="text-right">
+    <i class="bi bi-x-lg" (click)="hidemusic()"></i>
+  </div>
+  <div class="slide-container">
+    <p class="slide-text">Until I Found You - Stephen Sanchez</p>
+  </div>
+  <audio controls autoplay [playbackRate]="0.75">
+    <source src="/assets/until-i-found-you.mp3" type="audio/mpeg">
+  </audio>
+</div> -->

@@ -1,6 +1,34 @@
+@media only screen and (max-width: 992px) {
+
+  #border1 {
+    border: solid 15px white !important;
+}
+
+  #frame2 {
+    margin: 8px auto !important;
+    border: 10px solid #222 !important;
+    height: 475px !important;
+    width: 295px !important;
+}
+
+.picture-border2 {
+    height: 340px !important;
+    width: 240px !important;
+    margin-left: -119px !important;
+}
+
+.music {
+  display: none;
+}
+
+
+
+}
+
 .background-page {
-    background-color: rgba(39, 38, 38, 0.756);
+    background-color: rgba(236, 231, 231, 0.414);
     padding: 30px;
+    font-weight: bold;
 }
 
 .bg-border {
@@ -12,14 +40,161 @@
 
 @keyframes changecolor {
     from {
-        border: 2px solid rgba(93, 0, 255, 0.656); 
-        box-shadow: 0 4px 8px 0 rgba(158, 104, 252, 0.656), 0 6px 20px 0 rgba(152, 100, 243, 0.656);
+        border: 2px solid rgba(68, 67, 68, 0.656); 
+        box-shadow: 0 4px 8px 0 rgba(106, 105, 106, 0.656), 0 6px 20px 0 rgba(198, 197, 198, 0.656);
         }
-    to {border: 2px solid rgba(181, 60, 242, 0.656);
-        box-shadow: 0 4px 8px 0 rgba(221, 52, 247, 0.656), 0 6px 20px 0 rgba(236, 59, 242, 0.656);
+    to {border: 2px solid rgba(0, 0, 0, 0.656);
+        box-shadow: 0 4px 8px 0 rgba(30, 29, 30, 0.656), 0 6px 20px 0 rgba(49, 49, 49, 0.656);
         }
   }
 
   .input-question {
     margin-bottom: 20px;
   }
+
+  .none {
+    display: none;
+  }
+  .music {
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+    z-index: 999;
+    padding: 10px 0px 0px 0px;
+  }
+
+  .slide-container {
+    width: 100%; /* Ensure the container takes full width */
+    overflow: hidden; /* Hide any overflowing content */
+  }
+
+  .slide-text {
+    animation: slide 12s infinite; /* Adjust the duration as needed */
+    white-space: nowrap; /* Prevent the text from wrapping to a new line */
+    overflow: hidden; /* Hide any overflowing text */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(100%); /* Start the text outside the container on the right */
+    }
+    100% {
+      transform: translateX(0); /* Return the text to its original position */
+    }
+  }
+
+  .show-message {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .close-button {
+    cursor: pointer;
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .close-button:hover {
+    background-color: #000000;
+  }
+
+  .card-center {
+    display: block !important;
+    margin: auto;
+  }
+
+/* picture-border*/
+
+  #frame1 {
+    position:relative;
+    padding:0;
+    margin:0;
+    border:solid 15px #555; 
+    max-width:600px;
+    margin:40px auto;
+    box-shadow:-3px -3px 12px #999;
+  }
+
+  #border1 {
+    position:relative;
+    padding:0;
+    margin:0;
+    border:solid 70px white;
+    box-shadow:-3px -3px 12px #999;
+  }  
+
+  .picture-border {
+    display:block;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:auto;
+    border-top:solid 2px #aaa;
+    border-left:solid 2px #aaa;
+    border-bottom:solid 2px #ccc;
+    border-right:solid 2px #ccc;
+  }
+
+
+  #frame2 {
+    margin:50px auto;
+    border:25px solid #222;
+    height:475px;
+    width:350px;
+    -webkit-box-shadow:  px 2px 3px 1px rgba(0, 0, 0, .5);
+    box-shadow:  0px 3px 10px 4px rgba(0, 0, 0, .3);
+  }
+
+  #border2 {
+    background:white;
+    height:100%;
+    width:100%;
+    -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .4);
+    box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .4);
+  }
+
+  .picture-border2 {
+    position: absolute;
+    height: 350px;
+    width: 250px;
+    margin-left: -120px;
+    margin-top: 25px;
+    box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
+    border: 2px inset #c9c9c9;
+  }
+
+  .text-picture {
+    position: absolute;
+    margin-top: 380px;
+    font-size: 25px;
+    margin-left: 70px;
+  }
+
+  .question {
+    text-align: left;
+  }
+
+  .question.answer{
+    margin-bottom: 35px;
+    margin-top: 35px;
+  }
+
+  .question p {
+    color: #9d0c9e;
+    font-weight: bold;
+  }
+
+  .question label {
+    color: #10798b;
+  }
+
+  
+
+  
